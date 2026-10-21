@@ -1,4 +1,4 @@
-# analise-chamados-sla
+# Análise-chamados-sla
 Análise de Chamados de Suporte e Indicadores de SLA com SQL e Power BI
 
 Projeto de análise de dados voltado à investigação de chamados de TI, com foco na organização dos dados, análise operacional e acompanhamento de indicadores relacionados ao cumprimento de SLA (*Service Level Agreement*).
