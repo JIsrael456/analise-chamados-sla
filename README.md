@@ -26,7 +26,8 @@ analise-chamados-sla/
 ├── sql/
 │   └── analise-chamados-sla.sql
 ├── dashboard/
-│   └── analise-chamados-sla.pbix
+│   ├── Analise-de-Chamados-SLA.pbix
+│   └── Chamados_de_suporte_SLA.pdf
 └── data/
     ├── support_tickets.csv
     └── suporte.db
@@ -37,11 +38,12 @@ analise-chamados-sla/
 | Arquivo | Descrição |
 |---|---|
 | [Consultas SQL](sql/analise-chamados-sla.sql) | Perguntas de negócio e consultas exploratórias organizadas por níveis de dificuldade. |
-| [Dashboard Power BI](dashboard/analise-chamados-sla.pbix) | Relatório interativo. Para abrir, utilize o Power BI Desktop. |
+| [Dashboard Power BI](dashboard/Analise-de-Chamados-SLA.pbix) | Arquivo Power BI Desktop (.pbix). |
+| [Relatório em PDF](dashboard/Chamados_de_suporte_SLA.pdf) | Versão em PDF disponível para visualização no navegador. |
 | [Dados CSV](data/support_tickets.csv) | Conjunto de dados usado no projeto. |
 | [Banco SQLite](data/suporte.db) | Banco de dados local preparado para consultar os registros. |
 
-O GitHub não renderiza arquivos `.pbix` como dashboards interativos na página do repositório; baixe o arquivo e abra-o no Power BI Desktop. Capturas de tela do dashboard poderão ser adicionadas quando a versão visual final estiver validada.
+O GitHub não renderiza arquivos `.pbix` como dashboards interativos na página do repositório; baixe o arquivo e abra-o no Power BI Desktop. O repositório também disponibiliza uma versão em PDF para consulta sem o Power BI Desktop.
 
 ## Perguntas investigadas
 
