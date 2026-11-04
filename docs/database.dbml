@@ -1,4 +1,3 @@
-
 Project analise_chamados_sla {
   database_type: 'PostgreSQL'
   Note: 'Modelo relacional proposto para analise de chamados e SLA'
