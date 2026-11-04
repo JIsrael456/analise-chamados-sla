@@ -31,7 +31,20 @@ analise-chamados-sla/
 └── data/
     ├── support_tickets.csv
     └── suporte.db
+├── docs/
+│   ├── README.md
+│   ├── database.dbml
+│   └── diagrama-erd.png
 ```
+
+## Modelagem de dados
+
+O diagrama abaixo documenta uma **proposta de estrutura relacional** para os chamados, com entidades de empresas, equipes e chamados, incluindo chaves primárias e relacionamentos. Ele é um modelo didático e não deve ser confundido com a estrutura física já implementada no banco SQLite do projeto.
+
+![Diagrama Entidade-Relacionamento](docs/diagrama-erd.png)
+
+- [Documentação da modelagem](docs/README.md)
+- [Código-fonte do diagrama em DBML](docs/database.dbml)
 
 ## Arquivos
 
