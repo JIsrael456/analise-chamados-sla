@@ -1,4 +1,4 @@
-## Modelagem de Dados
+# Modelagem de Dados
 
 A estrutura dos dados do projeto foi documentada
 utilizando DBML e dbdiagram.io.
@@ -6,6 +6,10 @@ utilizando DBML e dbdiagram.io.
 O diagrama apresenta as entidades, seus atributos,
 chaves primárias e relacionamentos.
 
-![Diagrama ERD](docs/diagrama-erd.png)
+## Diagrama Entidade-Relacionamento (DER)
 
-[Consultar modelo DBML](docs/database.dbml)
+![Diagrama ERD](./diagrama-erd.png)
+
+## Estrutura DBML
+
+[Consultar modelo DBML](./database.dbml)
