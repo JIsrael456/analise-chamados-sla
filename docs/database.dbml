@@ -1,1 +1,39 @@
 
+Project analise_chamados_sla {
+  database_type: 'PostgreSQL'
+  Note: 'Modelo relacional proposto para analise de chamados e SLA'
+}
+
+Table empresas {
+  id_empresa integer [pk]
+  nome varchar(150) [not null]
+  segmento varchar(100)
+  
+  Note: 'Empresas presentes na base'
+}
+
+Table equipes {
+  id_equipe integer [pk]
+  nome_equipe varchar(100) [not null]
+  nivel varchar(20)
+
+  Note: 'Equipes responsaveis pelo atendimento'
+}
+
+Table chamados {
+  id_chamado integer [pk]
+  id_empresa integer [not null]
+  id_equipe integer
+  data_abertura timestamp
+  data_fechamento timestamp
+  status varchar(50)
+  prioridade varchar(30)
+  tempo_resolucao_h decimal(10,2)
+  sla_cumprido boolean
+
+  Note: 'Tabela central para indicadores de SLA'
+}
+
+Ref: chamados.id_empresa > empresas.id_empresa
+Ref: chamados.id_equipe > equipes.id_equipe
+
