@@ -58,23 +58,37 @@ O diagrama abaixo documenta uma **proposta de estrutura relacional** para os cha
 
 O GitHub não renderiza arquivos `.pbix` como dashboards interativos na página do repositório; baixe o arquivo e abra-o no Power BI Desktop. O repositório também disponibiliza uma versão em PDF para consulta sem o Power BI Desktop.
 
-## Prévia do dashboard Power BI
+## Dashboard Power BI — visualização das páginas
 
-As capturas abaixo permitem visualizar três páginas do relatório diretamente no GitHub, sem instalar o Power BI Desktop. Para consultar a versão exportada completa, acesse o [relatório em PDF](dashboard/Chamados_de_suporte_SLA.pdf); para explorar os filtros e medidas, abra o [arquivo Power BI](dashboard/Analise-de-Chamados-SLA.pbix) no Power BI Desktop.
+O relatório apresenta indicadores operacionais de chamados de suporte e análises exploratórias. As três primeiras capturas estão disponíveis diretamente abaixo; a quarta página, **Dicionário de Indicadores**, pode ser consultada no [PDF completo](dashboard/Chamados_de_suporte_SLA.pdf). Para usar filtros e interações, abra o [arquivo original do Power BI](dashboard/Analise-de-Chamados-SLA.pbix) no Power BI Desktop.
 
-### Página 1
+### Página 1 — Visão geral dos chamados
 
-![Primeira página do dashboard Power BI](dashboard/preview-pagina-1.jpg)
+![Página 1 do dashboard](dashboard/preview-pagina-1.jpg)
 
-### Página 2
+**Objetivo:** oferecer uma leitura inicial do volume de chamados e dos indicadores operacionais, ajudando a identificar pontos que merecem investigação.
 
-![Segunda página do dashboard Power BI](dashboard/preview-pagina-2.jpg)
+### Página 2 — Análise operacional
 
-### Página 3
+![Página 2 do dashboard](dashboard/preview-pagina-2.jpg)
 
-![Terceira página do dashboard Power BI](dashboard/preview-pagina-3.jpg)
+**Objetivo:** aprofundar a comparação de indicadores entre grupos e apoiar a interpretação de diferenças observadas na base.
 
-> **Quarta página:** consulte o PDF acima. A antiga imagem da quarta página não era uma captura válida e não foi reutilizada. As imagens são prévias estáticas; os filtros interativos estão disponíveis no arquivo `.pbix`.
+### Página 3 — Exploração dos indicadores
+
+![Página 3 do dashboard](dashboard/preview-pagina-3.jpg)
+
+**Objetivo:** complementar a análise com visualizações que permitem examinar padrões e possíveis associações, sem inferir causalidade.
+
+### Página 4 — Dicionário de Indicadores
+
+**Objetivo:** documentar as definições, fórmulas DAX, unidades de medida e cuidados de leitura dos indicadores utilizados no painel. Essa página também inclui orientações de navegação e a origem dos dados.
+
+**Exemplos de cuidados documentados:** o downtime médio de todos os chamados difere da média apenas dos chamados com queda; valores extremos podem distorcer médias; indicadores percentuais dependem dos filtros e dos denominadores utilizados.
+
+[Abrir a quarta página no relatório em PDF](dashboard/Chamados_de_suporte_SLA.pdf)
+
+> **Nota:** as imagens são capturas estáticas. Os títulos descritivos acima servem para orientar a leitura do portfólio; a referência definitiva para os nomes e conteúdos de cada aba é o arquivo Power BI. A captura da quarta página ainda precisa ser incorporada como imagem ao repositório.
 
 ## Perguntas investigadas
 
