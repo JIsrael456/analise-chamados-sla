@@ -78,7 +78,7 @@ WHERE priority = 'high'
 GROUP BY customer_tier, priority
 ORDER BY customer_tier, COUNT(*) DESC;
 
---Chamados de empresas Enterprise têm mais prioridade alta que os de Basic? --Dica: mesma estrutura, mas com HAVING.
+--Chamados de empresas Enterprise têm maior percentual de prioridade alta que os de Basic? -- Comparação por plano.
 SELECT
     customer_tier,
     priority,
@@ -142,14 +142,11 @@ HAVING COUNT(*) > 2500
 ORDER BY COUNT(*) DESC;
 
 --Nível 4
---Quantos chamados estão sem sentimento? --Dica: tente IS NULL. Se vier zero, olhe se importou como texto vazio ''. É um problema clássico de importação.
+--Quantos chamados estão sem sentimento (NULL, texto vazio ou somente espaços)?
 SELECT
-    customer_sentiment,
-    COUNT(*) AS Total_chamados
+    COUNT(*) AS chamados_sem_sentimento
 FROM Support_tickets
-WHERE customer_sentiment IS NULL
-GROUP BY customer_sentiment
-ORDER BY COUNT(*) DESC;
+WHERE customer_sentiment IS NULL OR TRIM(customer_sentiment) = '';
 
 --Existem ticket_id duplicados?
 SELECT
@@ -162,7 +159,7 @@ HAVING COUNT(*) >1;
 SELECT COUNT(*) AS total_linhas, COUNT(DISTINCT ticket_id) AS ids_unicos
 FROM Support_tickets;
 
---Há outliers? (error_rate_pct chega a ~80% e downtime_min a 196; a média está bem abaixo disso.)
+-- Estatísticas gerais para identificar possíveis valores extremos (não confirma outliers por si só).
 SELECT
 COUNT(*) AS total_chamados,
     ROUND(MIN(error_rate_pct),1) AS erro_minimo,
@@ -172,18 +169,18 @@ COUNT(*) AS total_chamados,
     MIN(downtime_min) AS downtime_minimo,
     MAX(downtime_min) AS downtime_maximo,
     ROUND(AVG(downtime_min), 1) AS downtime_media
+FROM Support_tickets;
+
+-- Quantos chamados têm downtime superior a 100 minutos?
+SELECT COUNT(*) AS total
 FROM Support_tickets
 WHERE downtime_min > 100;
 
--- Quantos chamados têm exatamente 100 minutos de downtime?
-SELECT COUNT(*) AS total
-FROM Support_tickets
-WHERE downtime_min = 100;
-
--- Quantos chamados registram downtime zero e maior que zero?
+-- Quantos chamados registram downtime zero e maior que zero, e qual o downtime médio entre os positivos?
 SELECT
     SUM(CASE WHEN downtime_min = 0 THEN 1 ELSE 0 END) AS sem_queda,
-    SUM(CASE WHEN downtime_min > 0 THEN 1 ELSE 0 END) AS com_queda
+    SUM(CASE WHEN downtime_min > 0 THEN 1 ELSE 0 END) AS com_queda,
+    ROUND(AVG(CASE WHEN downtime_min > 0 THEN downtime_min END), 1) AS downtime_medio_com_queda
 FROM Support_tickets;
 
 --Nível 5: o desafio final
