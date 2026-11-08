@@ -58,6 +58,24 @@ O diagrama abaixo documenta uma **proposta de estrutura relacional** para os cha
 
 O GitHub não renderiza arquivos `.pbix` como dashboards interativos na página do repositório; baixe o arquivo e abra-o no Power BI Desktop. O repositório também disponibiliza uma versão em PDF para consulta sem o Power BI Desktop.
 
+## Prévia do dashboard Power BI
+
+As capturas abaixo permitem visualizar três páginas do relatório diretamente no GitHub, sem instalar o Power BI Desktop. Para consultar a versão exportada completa, acesse o [relatório em PDF](dashboard/Chamados_de_suporte_SLA.pdf); para explorar os filtros e medidas, abra o [arquivo Power BI](dashboard/Analise-de-Chamados-SLA.pbix) no Power BI Desktop.
+
+### Página 1
+
+![Primeira página do dashboard Power BI](dashboard/preview-pagina-1.jpg)
+
+### Página 2
+
+![Segunda página do dashboard Power BI](dashboard/preview-pagina-2.jpg)
+
+### Página 3
+
+![Terceira página do dashboard Power BI](dashboard/preview-pagina-3.jpg)
+
+> **Quarta página:** consulte o PDF acima. A antiga imagem da quarta página não era uma captura válida e não foi reutilizada. As imagens são prévias estáticas; os filtros interativos estão disponíveis no arquivo `.pbix`.
+
 ## Perguntas investigadas
 
 As consultas exploram, entre outros temas:
